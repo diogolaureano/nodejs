@@ -6,10 +6,13 @@
 
 
 //Modulo HTTP ja vem instalado no node
+//Recebendo o modulo http em uma variavel
 var http = require("http")
 
 //Servidor http criado
-http.createServer().listen(8181)
-console.log("Meu servidor esta rodando!")
+//Criando função de req e res, para apresentar no navegador
+http.createServer(function(requisicao, resposta) {
+        resposta.end("Bem vindo ao meu site!")
+    }).listen(8181) //Acesso no navegador (localhost:8181) 
 
-//Instalando Sequelize
+console.log("Meu servidor esta rodando!")
